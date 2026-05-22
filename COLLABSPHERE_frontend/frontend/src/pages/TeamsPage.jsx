@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../hooks/useContexts';
 import { useTeams } from '../hooks/useContexts';
 import './Pages.css';
-
+import {api} from'../services/api';
 const TeamsPage = () => {
   const { token } = useAuth();
   const { teams, fetchTeams, joinTeam, loading, error } = useTeams();
