@@ -1,0 +1,284 @@
+/* Side Navbar Styling */
+.side-navbar {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: 280px;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 999;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.side-navbar.collapsed {
+  width: 80px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid white;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.1);
+}
+
+/* Navigation Menu */
+.sidebar-nav {
+  padding: 20px 0;
+  height: calc(100% - 100px);
+  overflow-y: auto;
+}
+
+/* Navigation Section */
+.nav-section {
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.nav-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 12px 0;
+  padding: 0 12px;
+  transition: opacity 0.3s ease;
+}
+
+.side-navbar.collapsed .nav-section-title {
+  opacity: 0;
+  display: none;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+/* Navigation Link */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: rgba(102, 126, 234, 0.2);
+  color: white;
+  padding-left: 20px;
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.2));
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Navigation Icon */
+.nav-icon {
+  font-size: 20px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: scale(1.2);
+}
+
+/* Navigation Label */
+.nav-label {
+  flex: 1;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.side-navbar.collapsed .nav-label {
+  display: none;
+}
+
+/* Active Indicator */
+.nav-active-indicator {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link.active .nav-active-indicator {
+  opacity: 1;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.footer-info {
+  flex: 1;
+  transition: opacity 0.3s ease;
+}
+
+.side-navbar.collapsed .footer-info {
+  display: none;
+}
+
+.footer-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-status {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ecc71;
+  display: inline-block;
+}
+
+/* Scrollbar */
+.side-navbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side-navbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.side-navbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.side-navbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .side-navbar {
+    width: 240px;
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .side-navbar.collapsed {
+    width: 70px;
+  }
+
+  .nav-section {
+    padding: 0 12px;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .side-navbar {
+    position: fixed;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    top: 0;
+    border-radius: 0;
+    transition: left 0.3s ease;
+    z-index: 1001;
+  }
+
+  .side-navbar.collapsed {
+    display: none;
+  }
+
+  .toggle-btn {
+    right: 16px;
+    top: 16px;
+  }
+}
